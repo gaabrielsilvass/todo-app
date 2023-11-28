@@ -21,3 +21,14 @@ const conexao = mysql.createConnection({
     port: 3306
 })
 
+conexao.connect((erro) => {
+    if (erro) {
+        return console.log(erro)
+    }
+
+    console.log("estou conectado ao MySql.")
+
+    app.listen(3005, () => {
+        console.log("Servidor rodando na porta 3005!")
+    })
+})
